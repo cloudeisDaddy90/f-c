@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Run {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Select one of the options below: \n1 - Area of a circle\n2 - Area of a rectangle\n3 - Area of a triangle");
+        int choice = scan.nextInt();
+        float area;
+        switch (choice) {
+            case 1:
+                System.out.println("Enter the radius of the circle");
+                float radius = scan.nextFloat();
+                area = (float) ((22.0 / 7.0) * Math.pow(radius, 2));
+                System.out.print("Area of the circle with radius " + radius + " is: " + area);
+                break;
+            case 2:
+                System.out.println("Enter the length of the rectangle");
+                float len = scan.nextFloat();
+                System.out.println("Enter the breadth of the rectangle");
+                float bre = scan.nextFloat();
+                area = len * bre;
+                System.out.print("Area of the rectangle with length " + len + " and breadth " + bre + " is: " + area);
+                break;
+            case 3:
+                System.out.println("Enter the breadth of the triangle");
+                float b = scan.nextFloat();
+                System.out.println("Enter the height of the triangle");
+                float h = scan.nextFloat();
+                area = (float) ((1.0/2.0) * b * h);
+                System.out.print("Area of the triangle with breadth " + b + " and height " + h + " is: " + area);
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + choice);
+        }
+    }
+}
